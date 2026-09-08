@@ -1,9 +1,9 @@
 .affiliate-section {
   width: 100%;
   overflow: hidden;
-  background: #f8f3e8;
+  background: #f1ece2;
   color: #f8f3e8;
-  padding: 1rem 1rem 1rem;
+  padding: 1.5rem 1rem 1.5rem;
 }
 
 .affiliate-content {
@@ -51,7 +51,7 @@
 .affiliate-logos img {
   display: block;
   width: auto;
-  height: 52px;
+  height: 60px;
   max-width: 110px;
   object-fit: contain;
 }
