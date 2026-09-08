@@ -1,0 +1,133 @@
+.header {
+  background-color: #171715;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 120px;
+  position: relative;
+  z-index: 100;
+}
+
+.logo-container img {
+  filter: brightness(0) invert(1);
+  width: 300px;
+}
+
+.links-container {
+  background-color: #171715;
+  width: 500px;
+  justify-content: space-around;
+  display: flex;
+}
+
+.links-container a {
+  color: #F5F1EA;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 20;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #F5F1EA;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 30px;
+    height: 100px;
+  }
+
+  .logo-container img {
+    width: 220px;
+  }
+
+  .links-container {
+    width: auto;
+    gap: 20px;
+  }
+
+  .links-container a {
+    font-size: 16px;
+  }
+}
+
+/* Mobile - collapsible menu */
+@media (max-width: 480px) {
+  .header {
+    height: 80px;
+    padding: 0 20px;
+    position: relative;
+    justify-content: flex-end;
+  }
+
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .logo-container img {
+    width: 160px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .links-container {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #171715;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    gap: 0;
+  }
+
+  .links-container.open {
+    max-height: 300px;
+  }
+
+  .links-container a {
+    padding: 14px 0;
+    font-size: 16px;
+  }
+}
