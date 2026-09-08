@@ -71,6 +71,14 @@
   .service-grid {
     grid-template-columns: 1fr;
   }
+
+  .service-icon img {
+    padding-top: 20px;
+  }
+
+  .service-card-body {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {

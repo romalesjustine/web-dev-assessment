@@ -12,7 +12,7 @@ export default function Contact({
   onSubmit,
 }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("idle"); // idle | sending | sent
+  const [status, setStatus] = useState("idle");
 
   const handleChange = (e) => {
     const { name, value } = e.target;

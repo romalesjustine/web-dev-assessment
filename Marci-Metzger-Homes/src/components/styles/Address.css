@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* Base (desktop) — original design, unchanged */
 .address-section {
   position: relative;
   padding: 4rem clamp(1.5rem, 8vw, 8rem);
@@ -45,7 +44,7 @@
 
 .property-search {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.7fr 0.7fr;
   gap: 1.25rem 1.5rem;
   margin-top: 2rem;
   padding: 1.7rem;
@@ -97,14 +96,12 @@
   font-size: 1.2rem;
 }
 
-/* Large devices and wide screens — max-width: 1200px */
 @media (max-width: 1200px) {
   .address-content h2 {
     font-size: clamp(2.4rem, 5vw, 3.6rem);
   }
 }
 
-/* Smaller desktop viewports — max-width: 992px */
 @media (max-width: 992px) {
   .address-section {
     padding: 3rem 2rem;
@@ -126,7 +123,6 @@
   }
 }
 
-/* Most tablets — max-width: 768px */
 @media (max-width: 768px) {
   .address-section {
     padding: 2.5rem 2rem;
@@ -151,7 +147,6 @@
   }
 }
 
-/* Small devices and most phones — max-width: 480px */
 @media (max-width: 480px) {
   .address-section {
     padding: 2rem 1.5rem;
@@ -182,7 +177,6 @@
   }
 }
 
-/* Smaller phone viewpoints — max-width: 320px */
 @media (max-width: 320px) {
   .address-section {
     padding: 1.5rem 1.25rem;

@@ -63,7 +63,6 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Tablet */
 @media (max-width: 768px) {
   .header {
     padding: 0 30px;
@@ -84,7 +83,6 @@
   }
 }
 
-/* Mobile - collapsible menu */
 @media (max-width: 480px) {
   .header {
     height: 80px;

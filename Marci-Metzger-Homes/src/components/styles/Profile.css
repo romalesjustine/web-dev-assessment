@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* Base (desktop) — original design, unchanged */
 .profile {
   display: flex;
   align-items: center;
@@ -69,7 +68,6 @@
   border: none;
 }
 
-/* Large devices and wide screens — max-width: 1200px */
 @media (max-width: 1200px) {
   .description-section h1 {
     width: 100%;
@@ -82,7 +80,6 @@
   }
 }
 
-/* Smaller desktop viewports — max-width: 992px */
 @media (max-width: 992px) {
   .profile {
     height: auto;
@@ -99,7 +96,6 @@
   }
 }
 
-/* Most tablets — max-width: 768px */
 @media (max-width: 768px) {
   .profile {
     flex-direction: column;
@@ -119,13 +115,16 @@
   }
 
   .description-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
   }
 
   .description-name,
   .description-section h1,
   .description-text {
-    text-align: left;
+    text-align: center;
   }
 
   .description-section h1,
@@ -147,7 +146,6 @@
   }
 }
 
-/* Small devices and most phones — max-width: 480px */
 @media (max-width: 480px) {
   .profile {
     min-height: 0;
@@ -197,7 +195,6 @@
   }
 }
 
-/* Smaller phone viewpoints — max-width: 320px */
 @media (max-width: 320px) {
   .profile {
     padding: 1.5rem 1.25rem;

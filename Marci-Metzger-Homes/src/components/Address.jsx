@@ -29,9 +29,10 @@ export function Address() {
             Type
             <select defaultValue="">
               <option value="">Any</option>
-              <option>House</option>
-              <option>Condo</option>
               <option>Land</option>
+              <option>Residential</option>
+              <option>Residential Lease</option>
+              <option>High Rise</option>
             </select>
           </label>
 

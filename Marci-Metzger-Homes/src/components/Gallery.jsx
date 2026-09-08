@@ -9,19 +9,17 @@ import gallery5 from "../assets/gallery5.png";
 import gallery6 from "../assets/gallery6.png";
 import gallery7 from "../assets/gallery7.png";
 
-// Default set of 7 local images — swap these for your own if needed.
 const DEFAULT_IMAGES = [
-  gallery1,
-  gallery2,
-  gallery3,
-  gallery4,
-  gallery5,
-  gallery6,
-  gallery7,
+  gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7,
 ];
 
-const VISIBLE = 3; // number of images always on screen
-const GAP = 14; // px, matches gap in the CSS
+const GAP = 14;
+
+function getVisibleCount(width) {
+  if (width <= 480) return 1;
+  if (width <= 768) return 2;
+  return 3;
+}
 
 export default function Galler({
   eyebrow = "Community view",
@@ -32,16 +30,18 @@ export default function Galler({
   const trackRef = useRef(null);
 
   const [itemWidth, setItemWidth] = useState(0);
-  const [index, setIndex] = useState(0); // index of left-most visible image
+  const [visible, setVisible] = useState(3);
+  const [index, setIndex] = useState(0);
   const [drag, setDrag] = useState({ active: false, startX: 0, delta: 0 });
 
-  const maxIndex = Math.max(images.length - VISIBLE, 0);
+  const maxIndex = Math.max(images.length - visible, 0);
 
-  // Measure available width so exactly 3 images always fit, responsively.
   const measure = useCallback(() => {
     if (!viewportRef.current) return;
     const viewportWidth = viewportRef.current.offsetWidth;
-    const width = (viewportWidth - GAP * (VISIBLE - 1)) / VISIBLE;
+    const count = getVisibleCount(window.innerWidth);
+    setVisible(count);
+    const width = (viewportWidth - GAP * (count - 1)) / count;
     setItemWidth(width);
   }, []);
 
@@ -50,6 +50,10 @@ export default function Galler({
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
   }, [measure]);
+
+  useEffect(() => {
+    setIndex((i) => Math.min(i, Math.max(images.length - visible, 0)));
+  }, [visible, images.length]);
 
   const step = itemWidth + GAP;
 
@@ -61,7 +65,6 @@ export default function Galler({
   const handlePrev = () => goTo(index - 1);
   const handleNext = () => goTo(index + 1);
 
-  // --- swipe handling (touch + mouse) ---
   const onDragStart = (clientX) => {
     setDrag({ active: true, startX: clientX, delta: 0 });
   };

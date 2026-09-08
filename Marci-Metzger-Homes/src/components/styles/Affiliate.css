@@ -3,12 +3,22 @@
   overflow: hidden;
   background: #f1ece2;
   color: #f8f3e8;
-  padding: 1.5rem 1rem 1.5rem;
+  padding: 2.5rem 1rem 2.5rem;
 }
 
 .affiliate-content {
   width: 100%;
   margin: 0 auto;
+}
+
+.affiliates-title {
+  margin: 0 0 40px;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.25;
+  color: #23211d;
 }
 
 .affiliate-title {
@@ -44,14 +54,10 @@
   padding-inline: clamp(1.5rem, 6vw, 6rem);
 }
 
-.affiliate-logos:hover .affiliate-logo-track {
-  animation-play-state: paused;
-}
-
 .affiliate-logos img {
   display: block;
   width: auto;
-  height: 60px;
+  height: 80px;
   max-width: 110px;
   object-fit: contain;
 }
