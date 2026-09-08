@@ -1,3 +1,4 @@
+/* Base (desktop) — original design, unchanged */
 .hero {
   position: relative;
   min-height: 600px;
@@ -5,9 +6,6 @@
   align-items: center;
   overflow: hidden;
   background: url("../../assets/hero-background.jpg") center / cover no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -30,6 +28,7 @@
   width: min(800px, 52%);
   margin-left: clamp(2rem, 7vw, 7rem);
   color: #f8f3e8;
+  text-align: left;
 }
 
 .hero h1 {
@@ -37,6 +36,7 @@
   font-family: "Cinzel", serif;
   font-size: clamp(2.5rem, 5vw, 4.7rem);
   line-height: 1.05;
+  text-align: left;
 }
 
 .hero__content p:not(.eyebrow) {
@@ -65,15 +65,26 @@
   text-decoration: none;
 }
 
-/* Tablet */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 500px;
+/* Large devices and wide screens — max-width: 1200px */
+@media (max-width: 1200px) {
+  .hero__content {
+    margin-left: clamp(1.5rem, 6vw, 5rem);
   }
 
+  .hero a {
+    width: 22%;
+  }
+}
 
+/* Smaller desktop viewports — max-width: 992px */
+@media (max-width: 992px) {
+  .hero {
+    min-height: 500px;
+    background-attachment: scroll;
+  }
 
   .hero::before {
+    width: 100%;
     background: linear-gradient(90deg,
         rgba(10, 12, 12, 0.85) 0%,
         rgba(10, 12, 12, 0.75) 50%,
@@ -84,22 +95,51 @@
   .hero__content {
     width: min(800px, 70%);
     margin-left: clamp(1.5rem, 5vw, 3rem);
-  }
-
-  .hero__content p {
-    text-align: center;
-  }
-
-  .hero__content h1 {
-    text-align: center;
+    text-align: left;
   }
 
   .hero__content p:not(.eyebrow) {
-    max-width: 320px;
+    max-width: 400px;
+  }
+
+  .hero a {
+    width: 28%;
   }
 }
 
-/* Mobile */
+/* Most tablets — max-width: 768px */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 450px;
+  }
+
+  .hero__content {
+    width: 85%;
+    margin-left: clamp(1.25rem, 4vw, 2.5rem);
+    text-align: left;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    text-align: left;
+  }
+
+  .hero__content p:not(.eyebrow) {
+    max-width: 340px;
+    text-align: left;
+  }
+
+  .hero a {
+    width: 32%;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Small devices and most phones — max-width: 480px */
 @media (max-width: 480px) {
   .hero {
     min-height: 420px;
@@ -116,27 +156,57 @@
     width: 100%;
     margin-left: 0;
     padding: 0 1.5rem;
-    text-align: left;
+    text-align: center;
   }
 
   .eyebrow {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 8vw, 2.8rem);
+    font-size: clamp(2rem, 8vw, 2.6rem);
     margin: 0.75rem 0;
+    text-align: center;
   }
 
   .hero__content p:not(.eyebrow) {
     max-width: 100%;
     font-size: 0.9rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero a {
-    justify-self: center;
-    width: 40%;
-    text-align: center;
-    padding: 1rem 1.2rem;
+    width: 45%;
+    margin: 1.5rem auto 0;
+  }
+}
+
+/* Smaller phone viewpoints — max-width: 320px */
+@media (max-width: 320px) {
+  .hero {
+    min-height: 380px;
+  }
+
+  .hero__content {
+    padding: 0 1rem;
+  }
+
+  .eyebrow {
+    font-size: 0.55rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 9vw, 2.1rem);
+  }
+
+  .hero__content p:not(.eyebrow) {
+    font-size: 0.82rem;
+  }
+
+  .hero a {
+    width: 60%;
+    padding: 0.85rem 1rem;
   }
 }
