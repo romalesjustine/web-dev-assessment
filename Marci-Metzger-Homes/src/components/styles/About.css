@@ -1,0 +1,239 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base (desktop) — original design, unchanged */
+.about {
+  display: flex;
+  background-color: #F5F1EA;
+  width: 100%;
+  min-height: 340px;
+}
+
+.about1 {
+  padding-top: 70px;
+}
+
+.about3 {
+  padding-bottom: 70px;
+}
+
+.about-section-outer {
+  background-color: #F5F1EA;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-image-section {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 50%;
+}
+
+.about-image-section img {
+  width: 550px;
+  max-width: 100%;
+  height: auto;
+  padding-right: 60px;
+}
+
+.about-description-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.about-subtitle {
+  color: #c6a875;
+  font: 700 1rem/1 Arial, sans-serif;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.about-description-section h1 {
+  margin-bottom: 15px;
+  font-size: 45px;
+  width: 75%;
+  text-align: left;
+}
+
+.about-description-section p {
+  width: 75%;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.about--reverse {
+  flex-direction: row-reverse;
+}
+
+.about--reverse .about-image-section {
+  justify-content: start;
+}
+
+.about--reverse .about-image-section img {
+  padding-right: 0;
+  padding-left: 40px;
+}
+
+.about--reverse .about-description-section {
+  align-items: end;
+  text-align: right;
+}
+
+/* Large devices and wide screens — max-width: 1200px */
+@media (max-width: 1200px) {
+  .about-image-section img {
+    width: 450px;
+  }
+
+  .about-description-section h1 {
+    width: 90%;
+    font-size: 38px;
+  }
+
+  .about-description-section p {
+    width: 90%;
+  }
+}
+
+/* Smaller desktop viewports — max-width: 992px */
+@media (max-width: 992px) {
+  .about1 {
+    padding-top: 40px;
+  }
+
+  .about3 {
+    padding-bottom: 40px;
+  }
+
+  .about,
+  .about--reverse {
+    padding: 0 2rem;
+  }
+
+  .about-image-section img {
+    width: 350px;
+    padding-right: 30px;
+  }
+
+  .about--reverse .about-image-section img {
+    padding-left: 30px;
+  }
+
+  .about-description-section h1 {
+    font-size: 32px;
+  }
+}
+
+/* Most tablets — max-width: 768px */
+@media (max-width: 768px) {
+
+  .about,
+  .about--reverse {
+    flex-direction: column;
+    min-height: 0;
+    padding: 2.5rem 2rem;
+  }
+
+  .about1 {
+    padding-top: 2.5rem;
+  }
+
+  .about3 {
+    padding-bottom: 2.5rem;
+  }
+
+  .about-image-section,
+  .about--reverse .about-image-section {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-image-section img,
+  .about--reverse .about-image-section img {
+    width: 100%;
+    max-width: 380px;
+    padding: 0;
+  }
+
+  .about-description-section,
+  .about--reverse .about-description-section {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .about-description-section h1,
+  .about-description-section p {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Small devices and most phones — max-width: 480px */
+@media (max-width: 480px) {
+
+  .about,
+  .about--reverse {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-image-section img,
+  .about--reverse .about-image-section img {
+    max-width: 280px;
+  }
+
+  .about-description-section,
+  .about--reverse .about-description-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-description-section h1,
+  .about-description-section p {
+    text-align: center;
+  }
+
+  .about-subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  .about-description-section h1 {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .about-description-section p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Smaller phone viewpoints — max-width: 320px */
+@media (max-width: 320px) {
+
+  .about,
+  .about--reverse {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .about-image-section img,
+  .about--reverse .about-image-section img {
+    max-width: 220px;
+  }
+
+  .about-description-section h1 {
+    font-size: clamp(1.5rem, 9vw, 1.9rem);
+  }
+
+  .about-description-section p {
+    font-size: 0.82rem;
+  }
+}

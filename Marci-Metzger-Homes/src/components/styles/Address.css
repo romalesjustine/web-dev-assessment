@@ -1,0 +1,203 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base (desktop) — original design, unchanged */
+.address-section {
+  position: relative;
+  padding: 4rem clamp(1.5rem, 8vw, 8rem);
+  background-position: center;
+  background-size: cover;
+  color: #f8f3e8;
+}
+
+.address-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 11, 0.68);
+}
+
+.address-content {
+  position: relative;
+  max-width: 1350px;
+  margin: auto;
+}
+
+.address-eyebrow {
+  color: #c6a875;
+  font: 700 0.8rem/1 Arial, sans-serif;
+  letter-spacing: 0.12em;
+}
+
+.address-content h2 {
+  margin: 1rem 0;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+}
+
+.address-intro {
+  max-width: 650px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.property-search {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem 1.5rem;
+  margin-top: 2rem;
+  padding: 1.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 20px;
+  background: rgba(30, 29, 27, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.property-search label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #f8f3e8;
+  font: 0.85rem Arial, sans-serif;
+}
+
+.property-search label:nth-child(1),
+.property-search label:nth-child(2),
+.property-search label:nth-child(3) {
+  grid-column: span 2;
+}
+
+.property-search select,
+.property-search input {
+  min-height: 44px;
+  padding: 0 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: rgba(20, 20, 20, 0.55);
+  color: #f8f3e8;
+  width: 100%;
+}
+
+.property-search button {
+  align-self: end;
+  min-height: 48px;
+  border: 0;
+  border-radius: 999px;
+  background: #ead5b3;
+  color: #25231f;
+  font: 700 0.75rem Arial, sans-serif;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.property-search button span {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Large devices and wide screens — max-width: 1200px */
+@media (max-width: 1200px) {
+  .address-content h2 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+  }
+}
+
+/* Smaller desktop viewports — max-width: 992px */
+@media (max-width: 992px) {
+  .address-section {
+    padding: 3rem 2rem;
+  }
+
+  .property-search {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .property-search label:nth-child(1),
+  .property-search label:nth-child(2),
+  .property-search label:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .property-search button {
+    grid-column: span 4;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Most tablets — max-width: 768px */
+@media (max-width: 768px) {
+  .address-section {
+    padding: 2.5rem 2rem;
+  }
+
+  .address-content h2 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+
+  .property-search {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .property-search label:nth-child(1),
+  .property-search label:nth-child(2),
+  .property-search label:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .property-search button {
+    grid-column: span 2;
+  }
+}
+
+/* Small devices and most phones — max-width: 480px */
+@media (max-width: 480px) {
+  .address-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .address-content h2 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
+  }
+
+  .address-intro {
+    font-size: 0.9rem;
+  }
+
+  .property-search {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .property-search label:nth-child(1),
+  .property-search label:nth-child(2),
+  .property-search label:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .property-search button {
+    grid-column: auto;
+    width: 100%;
+  }
+}
+
+/* Smaller phone viewpoints — max-width: 320px */
+@media (max-width: 320px) {
+  .address-section {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .address-content h2 {
+    font-size: clamp(1.5rem, 9vw, 1.8rem);
+  }
+
+  .address-intro {
+    font-size: 0.82rem;
+  }
+
+  .property-search {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}

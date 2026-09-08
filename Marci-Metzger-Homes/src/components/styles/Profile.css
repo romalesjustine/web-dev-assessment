@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Base (desktop) — original design, unchanged */
 .profile {
   display: flex;
@@ -16,6 +22,8 @@
 
 .image-section img {
   width: 400px;
+  max-width: 100%;
+  height: auto;
 }
 
 .description-section {
@@ -80,7 +88,6 @@
     height: auto;
     min-height: 500px;
     padding: 3rem 2rem;
-    box-sizing: border-box;
   }
 
   .image-section img {
@@ -96,13 +103,14 @@
 @media (max-width: 768px) {
   .profile {
     flex-direction: column;
+    padding: 2.5rem 2rem;
   }
 
   .image-section {
     width: 100%;
     justify-content: center;
     padding-right: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .image-section img {
@@ -143,7 +151,7 @@
 @media (max-width: 480px) {
   .profile {
     min-height: 0;
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .image-section {
@@ -151,7 +159,8 @@
   }
 
   .image-section img {
-    width: min(100%, 260px);
+    width: 100%;
+    max-width: 260px;
   }
 
   .description-name,
@@ -191,11 +200,12 @@
 /* Smaller phone viewpoints — max-width: 320px */
 @media (max-width: 320px) {
   .profile {
-    padding: 2.5rem 1.25rem;
+    padding: 1.5rem 1.25rem;
   }
 
   .image-section img {
-    width: min(100%, 220px);
+    width: 100%;
+    max-width: 220px;
   }
 
   .description-name {

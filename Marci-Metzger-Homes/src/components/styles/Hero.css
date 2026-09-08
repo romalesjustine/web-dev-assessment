@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Base (desktop) — original design, unchanged */
 .hero {
   position: relative;
@@ -7,11 +13,12 @@
   overflow: hidden;
   background: url("../../assets/hero-background.jpg") center / cover no-repeat;
   background-attachment: fixed;
+  width: 100%;
 }
 
 .hero::before {
   content: "";
-  width: 2000px;
+  width: 100%;
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg,
@@ -81,10 +88,10 @@
   .hero {
     min-height: 500px;
     background-attachment: scroll;
+    padding: 0 2rem;
   }
 
   .hero::before {
-    width: 100%;
     background: linear-gradient(90deg,
         rgba(10, 12, 12, 0.85) 0%,
         rgba(10, 12, 12, 0.75) 50%,
@@ -94,8 +101,7 @@
 
   .hero__content {
     width: min(800px, 70%);
-    margin-left: clamp(1.5rem, 5vw, 3rem);
-    text-align: left;
+    margin-left: 0;
   }
 
   .hero__content p:not(.eyebrow) {
@@ -111,12 +117,11 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 450px;
+    padding: 0 2rem;
   }
 
   .hero__content {
-    width: 85%;
-    margin-left: clamp(1.25rem, 4vw, 2.5rem);
-    text-align: left;
+    width: 100%;
   }
 
   .eyebrow {
@@ -125,12 +130,10 @@
 
   .hero h1 {
     font-size: clamp(2rem, 6vw, 2.8rem);
-    text-align: left;
   }
 
   .hero__content p:not(.eyebrow) {
     max-width: 340px;
-    text-align: left;
   }
 
   .hero a {
@@ -143,6 +146,7 @@
 @media (max-width: 480px) {
   .hero {
     min-height: 420px;
+    padding: 0 1.5rem;
   }
 
   .hero::before {
@@ -154,8 +158,6 @@
 
   .hero__content {
     width: 100%;
-    margin-left: 0;
-    padding: 0 1.5rem;
     text-align: center;
   }
 
@@ -187,10 +189,7 @@
 @media (max-width: 320px) {
   .hero {
     min-height: 380px;
-  }
-
-  .hero__content {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
 
   .eyebrow {

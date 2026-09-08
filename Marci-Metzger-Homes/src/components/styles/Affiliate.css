@@ -1,0 +1,92 @@
+.affiliate-section {
+  width: 100%;
+  overflow: hidden;
+  background: #f8f3e8;
+  color: #f8f3e8;
+  padding: 1rem 1rem 1rem;
+}
+
+.affiliate-content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.affiliate-title {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  color: #c6a875;
+  text-align: center;
+  font: 700 0.8rem/1 Arial, sans-serif;
+  letter-spacing: 0.12em;
+}
+
+.affiliate-logos {
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.affiliate-logo-track {
+  --affiliate-gap: clamp(15rem, 6vw, 4.75rem);
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: affiliate-scroll-right 18s linear infinite;
+}
+
+.affiliate-logo-group {
+  display: flex;
+  align-items: center;
+  flex: 0 0 100vw;
+  justify-content: space-evenly;
+  gap: var(--affiliate-gap);
+  box-sizing: border-box;
+  padding-inline: clamp(1.5rem, 6vw, 6rem);
+}
+
+.affiliate-logos:hover .affiliate-logo-track {
+  animation-play-state: paused;
+}
+
+.affiliate-logos img {
+  display: block;
+  width: auto;
+  height: 52px;
+  max-width: 110px;
+  object-fit: contain;
+}
+
+@keyframes affiliate-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .affiliate-logo-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .affiliate-section {
+    padding-block: 1.5rem;
+  }
+
+  .affiliate-logos {
+    width: 100vw;
+  }
+
+  .affiliate-logo-track {
+    --affiliate-gap: 2.25rem;
+  }
+
+  .affiliate-logos img {
+    height: 42px;
+    max-width: 90px;
+  }
+}

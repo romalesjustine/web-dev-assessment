@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import merciLogo from '../assets/merci-logo.png'
-import '../components/styles/Header.css'
+import './styles/Header.css'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
